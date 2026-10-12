@@ -9,23 +9,6 @@
 ';
 
 /* append your custom style below */
-#sidebar .theme-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  background: transparent;
-  color: var(--sidebar-muted-color);
-  font: inherit;
-  font-size: 0.85rem;
-  cursor: pointer;
-}
-#sidebar .theme-switch:hover { color: var(--sidebar-active-color); }
-#sidebar .theme-switch:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-
 /* --- CV Timeline --- */
 .cv-timeline {
   margin-top: 1rem;
