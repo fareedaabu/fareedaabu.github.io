@@ -13,6 +13,12 @@
 
     <a class="site-title d-block" href="{{ '/' | relative_url }}#about">{{ site.title }}</a>
     <p class="site-subtitle fst-italic mb-0">{{ site.tagline }}</p>
+    {% unless site.theme_mode %}
+      <button type="button" class="theme-switch" aria-label="Switch between light and dark mode" title="Switch between light and dark mode" id="mode-toggle">
+        <span aria-hidden="true">◐</span>
+        <span>Light / dark</span>
+      </button>
+    {% endunless %}
   </header>
   <!-- .profile-wrapper -->
 
@@ -41,16 +47,6 @@
   </nav>
 
   <div class="sidebar-bottom d-flex flex-wrap  align-items-center w-100">
-    {% unless site.theme_mode %}
-      <button type="button" class="btn btn-link nav-link" aria-label="Switch Mode" id="mode-toggle">
-        <i class="fas fa-adjust"></i>
-      </button>
-
-      {% if site.data.contact.size > 0 %}
-        <span class="icon-border"></span>
-      {% endif %}
-    {% endunless %}
-
     {% for entry in site.data.contact %}
       {%- assign url = null -%}
 
