@@ -1,36 +1,28 @@
 ---
-title: Projects
-icon: fas fa-diagram-project
-order: 3
+title: Publications
+icon: fas fa-book
+order: 2
+permalink: /publications/
 ---
 
-# Projects
+Publications and preprints from my [ORCID record](https://orcid.org/0009-0002-2633-5311), listed newest first.
 
-A selection of research and tooling projects. (I like keeping these concise and linking out to posts or repos for details.)
+<div id="orcid-publications" data-orcid="0009-0002-2633-5311">
+  <ul>
+    <li>
+      <a href="https://doi.org/10.1101/2025.07.18.665531">From Attraction to Repulsion: Omicron-Driven Rewiring of Nanobody Interfaces on the SARS-CoV-2 RBD</a>
+      <p>2025 · Preprint</p>
+    </li>
+  </ul>
+</div>
 
----
+<p id="orcid-status" class="text-muted" role="status" aria-live="polite"></p>
+<noscript>For the latest publications, visit my <a href="https://orcid.org/0009-0002-2633-5311">ORCID record</a>.</noscript>
 
-## 🧬 Omicron–Nanobody Dynamics
-**What:** Multi-system MD simulations to characterize mutation-induced binding disruption.  
-**Highlights:** Interface rewiring, destabilizing contacts, candidate engineering regions.  
-**Links:**  
-- Repo: https://github.com/YOUR_USERNAME/YOUR_REPO  
-- Write-up: /blog/
+<script src="{{ '/assets/js/publications.js' | relative_url }}" defer></script>
 
----
+<!-- ## Talks & posters
 
-## 🔬 Covariance Interaction Scoring
-**What:** Method to summarize stabilizing/destabilizing atomistic interactions from MD.  
-**Why:** Turns long trajectories into interpretable interaction fingerprints.  
-**Links:**  
-- Paper/preprint: ADD_LINK  
-- Code: ADD_LINK
+See [Conferences & Talks]({{ '/#conferences' | relative_url }}) for recent presentations. -->
 
----
-
-## 🤖 AlphaFold Screening Workflow
-**What:** Automated pipeline for batch complex prediction + score extraction + early-stop heuristics.  
-**Why:** Enables large screens while controlling compute cost.  
-**Links:**  
-- Code: ADD_LINK  
-- Notes: /blog/
+<!-- Add links to slides or posters when available. -->
