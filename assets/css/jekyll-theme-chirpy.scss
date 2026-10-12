@@ -1,0 +1,110 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* append your custom style below */
+/* --- CV Timeline --- */
+.cv-timeline {
+  margin-top: 1rem;
+}
+
+.cv-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-left: 2px solid rgba(0,0,0,0.12);
+  position: relative;
+  margin-left: 14px;
+  padding-left: 18px;
+}
+
+.cv-item::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 1.2rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.35);
+}
+
+.cv-date {
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.cv-title {
+  font-weight: 700;
+}
+
+.cv-desc {
+  opacity: 0.85;
+  margin-top: 0.2rem;
+}
+
+.cv-period {
+  grid-template-columns: 125px minmax(0, 1fr);
+  padding-bottom: 2rem;
+}
+
+.cv-period > .cv-body > .cv-title { font-size: 1.1rem; }
+
+.cv-experiences {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0 0 0 1rem;
+  border-left: 1px solid var(--main-border-color);
+}
+
+.cv-experience {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 0.75rem;
+  padding-block: 0.6rem;
+}
+
+.cv-experience .cv-date { font-size: 0.9rem; color: var(--text-muted-color); }
+
+/* --- Post Preview --- */
+.post-preview { transition: transform 0.12s ease; }
+.post-preview:hover { transform: translateY(-2px); }
+
+/* Single-page portfolio */
+html { scroll-behavior: smooth; }
+.single-page main,
+.single-page #tail-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+}
+.portfolio-section {
+  scroll-margin-top: 6rem;
+  padding-block: 2.75rem;
+  border-bottom: 1px solid var(--main-border-color);
+}
+.portfolio-section:last-child { border-bottom: 0; }
+.portfolio-section:focus { outline: none; }
+.portfolio-intro { padding-top: 2rem; }
+.portfolio .portfolio-section-title { margin-top: 0; }
+.portfolio-links { display: flex; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+.portfolio #orcid-publications li { margin-bottom: 1.5rem; }
+.portfolio #orcid-publications li p { margin-top: 0.4rem; color: var(--text-muted-color); }
+.cv-item { border-color: var(--main-border-color); }
+.cv-item::before { background: var(--text-muted-color); }
+@media (max-width: 576px) {
+  .portfolio-section { padding-block: 2rem; }
+  .cv-item { grid-template-columns: 70px 1fr; gap: 0.75rem; }
+  .cv-period { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; }
+  .cv-experience { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

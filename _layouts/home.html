@@ -1,0 +1,28 @@
+---
+layout: default
+refactor: true
+---
+
+<article class="portfolio content">
+  <section id="about" class="portfolio-section portfolio-intro" aria-labelledby="about-title" tabindex="-1">
+    <h1 id="about-title">{{ site.title }}</h1>
+    <p class="lead">PhD student in Computational Biology at the <a href="https://www.cmu.edu/compbio/" target="_blank" rel="noopener noreferrer">CMU–Pitt Joint Program</a>.</p>
+    <p>My research focuses on screening for <strong>protein–protein interactions</strong>, <strong>large-scale molecular dynamics simulations of nanobodies and MAPs</strong>, and <strong>machine learning</strong>.</p>
+    <div class="portfolio-links">
+      <a href="https://github.com/fareedaabu">GitHub</a>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=Kgj16FMAAAAJ">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/fareeda-e-abu-juam-48713b203/">LinkedIn</a>
+      <span>Email: {{ site.social.email_display }}</span>
+    </div>
+  </section>
+
+  {% assign sections = site.tabs | sort: 'order' %}
+  {% for tab in sections %}
+    {% assign section_id = tab.title | slugify %}
+    <section id="{{ section_id }}" class="portfolio-section" aria-labelledby="{{ section_id }}-title" tabindex="-1">
+      <h2 id="{{ section_id }}-title" class="portfolio-section-title">{{ tab.title }}</h2>
+      {{ tab.content | markdownify | replace: '<h2', '<h3' | replace: '</h2>', '</h3>' }}
+    </section>
+  {% endfor %}
+</article>
+<script src="{{ '/assets/js/sections.js' | relative_url }}" defer></script>
